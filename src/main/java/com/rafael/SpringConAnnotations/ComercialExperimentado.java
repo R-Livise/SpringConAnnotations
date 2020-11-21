@@ -8,7 +8,7 @@ import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
@@ -37,7 +37,12 @@ public class ComercialExperimentado implements IEmpledo {
 	
 
 	@Autowired
+	@Qualifier("informeFinancieroTrim4")
 	private IInfomeFinaciero nuevoInfome;
+	@Value("${email}")
+	private String Email;
+	@Value("${nombreEmpresa}")
+	private String NombreEmpresa;
 	
 	
 	@Override
@@ -52,26 +57,22 @@ public class ComercialExperimentado implements IEmpledo {
 		return this.nuevoInfome.getInformeFinaciaero();
 	}
 	
-//	@PostConstruct
-//	private void setPostConstruct1() {
-//		System.out.println("Inicion de bean Comercial1");
-//	}
-//	
-//	@PostConstruct
-//	private void postConstruct2() {
-//		System.out.println("Inicion de bean Comercial2");
-//	}
-//	
-//	@PostConstruct
-//	private void theBestPostConstruct3() {
-//		System.out.println("Inicion de bean Comercial3");
-//	}
-//	
-//	
-//	@PreDestroy
-//	private void setPreDestroy() {
-//		System.out.println("Cierre de la base de datos");
-//	}
-//	
+	@PostConstruct
+	private void setPostConstruct1() {
+		System.out.println("Inicio de bean Comercial");
+	}
+	
+	@PreDestroy
+	private void setPreDestroy() {
+		System.out.println("Cierre de la base de datos");
+	}
+
+	public String getEmail() {
+		return Email;
+	}
+
+	public String getNombreEmpresa() {
+		return NombreEmpresa;
+	}
 
 }

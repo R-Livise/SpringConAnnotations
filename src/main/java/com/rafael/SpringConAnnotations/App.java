@@ -1,5 +1,6 @@
 package com.rafael.SpringConAnnotations;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -11,28 +12,29 @@ public class App {
 
 		// Importar el achivo de congiguracion
 
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicacionContext.xml");
+//		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicacionContext.xml");
 
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(EmpleadosConfig.class); 
+		
 		// pedir un bean al contenedor
 
-		IEmpledo Antonio = context.getBean("comercialExperimentado", IEmpledo.class);
+			//accso por @Beans
+		IEmpledo Lucia = context.getBean("directivoFinacieroMedio", IEmpledo.class);
 		
-//		IEmpledo Lucia = context.getBean("comercialExperimentado", IEmpledo.class);
-
+			//acceso por @Component
+		ComercialExperimentado Antonio = context.getBean("comercialExperimentado", ComercialExperimentado.class);
+		
 		// usar el bean
 
-		System.out.println(Antonio.getTareas());
+		System.out.println("Lucia");
+		System.out.println(Lucia.getInformes());
 		
+		System.out.println("Antonio");
 		System.out.println(Antonio.getInformes());
 		
-//		if(Antonio == Lucia) {
-//			System.out.println("Antonio y Lucia son iguales.");
-//		}else {
-//			System.out.println("Antonio y Lucia son ditintos.");
-//		}
-//		
-//		System.out.println(Antonio);
-//		System.out.println(Lucia);
+		System.out.println("Email " + Antonio.getEmail());
+		System.out.println("Empresa " + Antonio.getNombreEmpresa());
+		
 		
 		// cerrar el contexto
 		
