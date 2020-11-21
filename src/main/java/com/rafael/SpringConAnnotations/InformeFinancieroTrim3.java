@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-public class InformeFinacieroTrim1 implements IInfomeFinaciero {
+public class InformeFinancieroTrim3 implements IInfomeFinaciero {
 
 	@Override
 	public String getInformeFinaciaero() {
 		// TODO Auto-generated method stub
-		return "Precentacion de informe financiero. TRIM1";
+		return "Presentación de informe financiero. TRIM3";
 	}
 
 }

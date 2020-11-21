@@ -16,12 +16,23 @@ public class App {
 		// pedir un bean al contenedor
 
 		IEmpledo Antonio = context.getBean("comercialExperimentado", IEmpledo.class);
+		
+		IEmpledo Lucia = context.getBean("comercialExperimentado", IEmpledo.class);
 
 		// usar el bean
 
 		System.out.println(Antonio.getTareas());
 		
 		System.out.println(Antonio.getInformes());
+		
+		if(Antonio == Lucia) {
+			System.out.println("Antonio y Lucia son iguales.");
+		}else {
+			System.out.println("Antonio y Lucia son ditintos.");
+		}
+		
+		System.out.println(Antonio);
+		System.out.println(Lucia);
 		
 		// cerrar el contexto
 		
