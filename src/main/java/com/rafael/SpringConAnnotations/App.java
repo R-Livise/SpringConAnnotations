@@ -17,7 +17,7 @@ public class App {
 
 		IEmpledo Antonio = context.getBean("comercialExperimentado", IEmpledo.class);
 		
-		IEmpledo Lucia = context.getBean("comercialExperimentado", IEmpledo.class);
+//		IEmpledo Lucia = context.getBean("comercialExperimentado", IEmpledo.class);
 
 		// usar el bean
 
@@ -25,14 +25,14 @@ public class App {
 		
 		System.out.println(Antonio.getInformes());
 		
-		if(Antonio == Lucia) {
-			System.out.println("Antonio y Lucia son iguales.");
-		}else {
-			System.out.println("Antonio y Lucia son ditintos.");
-		}
-		
-		System.out.println(Antonio);
-		System.out.println(Lucia);
+//		if(Antonio == Lucia) {
+//			System.out.println("Antonio y Lucia son iguales.");
+//		}else {
+//			System.out.println("Antonio y Lucia son ditintos.");
+//		}
+//		
+//		System.out.println(Antonio);
+//		System.out.println(Lucia);
 		
 		// cerrar el contexto
 		

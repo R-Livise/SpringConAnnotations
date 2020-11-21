@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-@Scope("prototype")
 public class ComercialExperimentado implements IEmpledo {
 	
 //	private IInfomeFinaciero nuevoInfome;
@@ -36,10 +35,8 @@ public class ComercialExperimentado implements IEmpledo {
 //		this.nuevoInfome = nuevoInfome;
 //	}
 	
-//	@Qualifier("informeFinancieroTrim4")
 
 	@Autowired
-	@Qualifier("informeFinancieroTrim4")
 	private IInfomeFinaciero nuevoInfome;
 	
 	
